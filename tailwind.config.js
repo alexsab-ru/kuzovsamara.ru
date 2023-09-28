@@ -8,9 +8,9 @@ export const theme = {
   },
   // colors: {},
   extend: {
-    // fontFamily: {
-    //   'sans': ['Roboto', ...defaultTheme.fontFamily.sans],
-    // },
+    fontFamily: {
+      'sans': ['Gilroy', ...defaultTheme.fontFamily.sans],
+    },
   },
 }
 export const plugins = []

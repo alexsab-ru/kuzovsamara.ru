@@ -1,13 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-const title = 'КУЗОВ ЭКСПЕРТ';
-const descr = 'Первый официальный кузовной по автомобилям из Китая'
+import { DEFAULT_SITE_NAME } from '@/const.js';
 ---
 
 <Layout>
 <div class="container pt-10">
-    <h1 class="text-red-500 uppercase text-4xl text-center">{ title }</h1>
+    <div class="flex items-center justify-center gap-5">
+        <span class="mdi mdi-car-cog text-7xl text-pink-500"></span>
+        <h1 class="text-pink-600 capitalize text-4xl text-center font-extrabold">{ DEFAULT_SITE_NAME }</h1>
+    </div>
 </div>
 </Layout>
-
-<style></style>

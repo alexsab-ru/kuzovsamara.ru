@@ -11,7 +11,12 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
+    "@mdi/font": "^7.2.96",
     "astro": "^3.1.4",
+    "swiper": "^10.3.1",
     "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "sass": "^1.68.0"
   }
 }

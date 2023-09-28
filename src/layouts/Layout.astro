@@ -1,11 +1,17 @@
 ---
+// import '@/scss/app.scss'
+
 interface Props {
 	title?: string,
-	description?: string
+	descr?: string
 }
-const { title, description } = Astro.props;
+const { title, descr } = Astro.props;
 
-import { DEFAULT_SITE_NAME, DEFAULT_SITE_DESCR } from '@/const.js';
+
+import { 
+	DEFAULT_SITE_NAME, 
+	DEFAULT_SITE_DESCR 
+} from '@/const.js';
 
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
@@ -15,7 +21,7 @@ import Footer from '@/components/Footer.astro';
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={ description ?? DEFAULT_SITE_DESCR } />
+		<meta name="description" content={ descr ?? DEFAULT_SITE_DESCR } />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={ Astro.generator } />
@@ -29,7 +35,6 @@ import Footer from '@/components/Footer.astro';
 		<Footer />
 	</body>
 </html>
-<style is:global>
-	
+<style is:global lang="scss">
+	@import "@/scss/app.scss";
 </style>
-@/const.js
