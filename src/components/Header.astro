@@ -1,3 +1,36 @@
-<header>
-    HEADER
+---
+import { DEFAULT_SITE_NAME } from '@/const.js';
+---
+
+<header class="sticky md:fixed w-full top-0 left-0 bg-gray-200/90 z-30">
+    <div class="container">
+        <div class="flex max-[480px]:flex-col items-center max-[480px]:gap-2.5 justify-between py-2 md:py-4">
+            <div
+                class="flex items-center flex-nowrap justify-center max-[480px]:flex-row flex-col lg:flex-row gap-1 lg:gap-4"
+            >
+                <div
+                    class="text-xs sm:text-xl lg:text-2xl uppercase tracking-wider lg:tracking-normal"
+                >
+                    {DEFAULT_SITE_NAME}
+                </div>
+            </div>
+            <div class="top_addr hidden xl:block">
+                г. Самара
+            </div>
+            <a
+                href="tel:+78469777710"
+                class="top_phone font-medium text-base md:text-lg"
+                >+7 (999) 999-99-99</a
+            >
+
+            <a
+                class="popup-link btn"
+                href="#common-modal"
+                data-title="Заказать звонок"
+                data-form_name="Заказ звонка. Шапка"
+            >
+                Заказать звонок
+            </a>
+        </div>
+    </div>
 </header>
