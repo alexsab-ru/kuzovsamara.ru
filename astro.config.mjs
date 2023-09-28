@@ -6,5 +6,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   // site: 'https://alexsab-ru.github.io/kuzovsamara.ru/',
-  root: './kuzovsamara.ru'
+  root: 'kuzovsamara.ru'
 });
