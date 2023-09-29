@@ -6,7 +6,10 @@ export const theme = {
     center: true,
     padding: '1.25rem',
   },
-  // colors: {},
+  colors: {
+    ...colors,
+    accent: colors.cyan, // в основном используется 400 и 500
+  },
   extend: {
     fontFamily: {
       'sans': ['Gilroy', ...defaultTheme.fontFamily.sans],
