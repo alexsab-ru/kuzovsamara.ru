@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host --open",
+    "dev": "astro dev --host --open --config astro.local.config.mjs",
     "start": "astro dev --host --open",
     "build_local": "astro build --config astro.local.config.mjs",
     "build": "astro build",
