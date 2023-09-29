@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host --open",
+    "start": "astro dev --host --open",
     "build": "astro build",
-    "preview": "astro preview",
+    "build_on_deploy": "astro build --config astro.deploy.config.mjs",
+    "preview": "astro preview --host --open",
     "astro": "astro"
   },
   "dependencies": {
