@@ -1,5 +1,5 @@
 ---
-import { DEFAULT_SITE_NAME } from '@/const.js';
+import { SITE_NAME } from '@/const.js';
 ---
 
 <header class="sticky md:fixed w-full top-0 left-0 bg-gray-200/90 z-30">
@@ -9,9 +9,9 @@ import { DEFAULT_SITE_NAME } from '@/const.js';
                 class="flex items-center flex-nowrap justify-center max-[480px]:flex-row flex-col lg:flex-row gap-1 lg:gap-4"
             >
                 <div
-                    class="text-xs sm:text-xl lg:text-2xl uppercase tracking-wider lg:tracking-normal"
+                    class="text-2xl uppercase w-min !leading-none"
                 >
-                    {DEFAULT_SITE_NAME}
+                    { SITE_NAME }
                 </div>
             </div>
             <div class="top_addr hidden xl:block">
