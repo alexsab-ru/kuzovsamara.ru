@@ -1,3 +1,4 @@
+import './data.alpine';
 // import './modules/analytics';
 import './modules/slider';
 // import './modules/scroll';

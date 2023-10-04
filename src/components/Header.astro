@@ -2,7 +2,7 @@
 import { SITE_NAME } from '@/const.js';
 ---
 
-<header class="sticky md:fixed w-full top-0 left-0 bg-white/90 z-30">
+<header class="sticky md:fixed w-full top-0 left-0 bg-white/90 z-30" x-data="{open: false}">
 	<div class="container">
 		<div class="flex items-center justify-between py-4">
 			<div class="flex flex-nowrap items-center gap-3 divide-x divide-black/20">
@@ -22,7 +22,12 @@ import { SITE_NAME } from '@/const.js';
 					<a href="tel:+78463210909" class="font-extrabold text-black/80 text-base md:text-lg" title="Южное шоссе, 12, стр. 3">8 (846) 321-09-09</a>
 				</div>
 				<div>
-					<a href="#" class="underline">Адреса салонов</a>
+					<a 
+						href="#" 
+						class="underline" 
+						@click.prevent="open = !open"
+						@keydown.escape="open = false"
+					>Адреса салонов</a>
 					<small class="block text-xs">2 салона</small>
 				</div>
 				<a 
@@ -34,6 +39,16 @@ import { SITE_NAME } from '@/const.js';
 					Заказать звонок
 				</a>
 			</div>
+		</div>
+	</div>
+	<div 
+		x-show="open"
+		x-cloak 
+		@click.outside="open = false"
+		class="border-t border-t-black/10 py-4"
+	>
+		<div class="container">
+			123
 		</div>
 	</div>
 </header>
