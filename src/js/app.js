@@ -1,6 +1,7 @@
 import './data.alpine';
 // import './modules/analytics';
 import './modules/slider';
+import './modules/dropzone';
 // import './modules/scroll';
 // import './modules/functions';
 // import './modules/color.links';

@@ -16,7 +16,7 @@
 		}
 	}
 	&.white {
-		@apply bg-white text-black border-white hover:bg-gray-50 hover:border-gray-50;
+		@apply bg-white text-black border-white hover:bg-gray-100 hover:border-gray-100;
 		&.btn-o {
 			@apply bg-transparent text-white hover:bg-white hover:text-black;
 		}
