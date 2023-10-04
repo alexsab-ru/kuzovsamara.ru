@@ -2,35 +2,38 @@
 import { SITE_NAME } from '@/const.js';
 ---
 
-<header class="sticky md:fixed w-full top-0 left-0 bg-gray-200/90 z-30">
-    <div class="container">
-        <div class="flex max-[480px]:flex-col items-center max-[480px]:gap-2.5 justify-between py-2 md:py-4">
-            <div
-                class="flex items-center flex-nowrap justify-center max-[480px]:flex-row flex-col lg:flex-row gap-1 lg:gap-4"
-            >
-                <div
-                    class="text-2xl uppercase w-min !leading-none"
-                >
-                    { SITE_NAME }
-                </div>
-            </div>
-            <div class="top_addr hidden xl:block">
-                г. Самара
-            </div>
-            <a
-                href="tel:+78469777710"
-                class="top_phone font-medium text-base md:text-lg"
-                >+7 (999) 999-99-99</a
-            >
-
-            <a
-                class="popup-link btn"
-                href="#common-modal"
-                data-title="Заказать звонок"
-                data-form_name="Заказ звонка. Шапка"
-            >
-                Заказать звонок
-            </a>
-        </div>
-    </div>
+<header class="sticky md:fixed w-full top-0 left-0 bg-white/90 z-30">
+	<div class="container">
+		<div class="flex items-center justify-between py-4">
+			<div class="flex flex-nowrap items-center gap-3 divide-x divide-black/20">
+				<div class="text-2xl uppercase w-min font-mono font-medium !leading-none">{ SITE_NAME }</div>
+				<div class="px-3 grid grid-cols-2 items-center gap-y-1 gap-x-2">
+					<img src="./img/logos/exeed.svg" class="h-2 w-auto" title="Exeed" alt="exeed">
+					<img src="./img/logos/geely.svg" class="h-4 w-auto" title="Geely" alt="geely">
+					<img src="./img/logos/omoda.svg" class="h-2 w-auto" title="Omoda" alt="omoda">
+					<img src="./img/logos/chery.svg" class="h-4 w-auto" title="Chery" alt="chery">
+					<img src="./img/logos/jaecoo.svg" class="h-2 w-auto invert" title="Jaecoo" alt="jaecoo">
+					<img src="./img/logos/gac.svg" class="h-4 w-auto" title="Gac" alt="gac">
+				</div>
+			</div>
+			<div class="flex items-center gap-8">
+				<div class="flex flex-col">
+					<a href="tel:+78463210000" class="font-extrabold text-black/80 text-base md:text-lg" title="ул. Демократическая, 55">8 (846) 321-00-00</a>
+					<a href="tel:+78463210909" class="font-extrabold text-black/80 text-base md:text-lg" title="Южное шоссе, 12, стр. 3">8 (846) 321-09-09</a>
+				</div>
+				<div>
+					<a href="#" class="underline">Адреса салонов</a>
+					<small class="block text-xs">2 салона</small>
+				</div>
+				<a 
+					class="popup-link btn"
+					href="#common-modal"
+					data-title="Заказать звонок"
+					data-form_name="Заказ звонка. Шапка"
+				>
+					Заказать звонок
+				</a>
+			</div>
+		</div>
+	</div>
 </header>
