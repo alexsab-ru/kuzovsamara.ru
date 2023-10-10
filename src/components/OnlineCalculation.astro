@@ -1,5 +1,6 @@
 ---
 import Select from '@/components/Select.astro';
+const options = ['ул. Демократическая, 55', 'Южное шоссе, 12, стр. 3'];
 ---
 
 <section class="text-white z-[1]" style="background-image: url('img/online-bg.jpg');">
@@ -17,7 +18,11 @@ import Select from '@/components/Select.astro';
 					<div class="error-message text-xs text-yellow-300 phone hidden">Введен некорректный номер телефона</div>
 				</div>
 				
-				<Select />
+				<Select 
+					name="salon" 
+					placeholder="Выберите салон" 
+					options={options} 
+				/>
 
 				<div class="w-full">
 					<input type="text" name="vin" class="border-2 border-transparent transition-all focus:border-accent-500 px-4 py-2.5 outline-none w-full text-black" placeholder="VIN">

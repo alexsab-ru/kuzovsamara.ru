@@ -1,18 +1,22 @@
 ---
 interface Props {
-	title?: string;
-	descr?: string;
+	name?: string;
+	placeholder?: string;
+	options?: string[];
 }
-const { title, descr } = Astro.props;
+const { name, placeholder = 'Выберите...', options = [] } = Astro.props;
+const data = JSON.stringify({open: false, select: null, placeholder, options });
+
 ---
 
+{ options.length ?
 <div
 	class="select relative w-full"
-	x-data="{open: false, select: null, placeholder: 'Выберите салон'}"
+	x-data={data}
 >
 	<input
 		type="text"
-		name="salon"
+		name={name}
 		class="absolute w-0 h-0 invisible opacity-0"
 		x-model="select"
 	/>
@@ -35,19 +39,17 @@ const { title, descr } = Astro.props;
 		@click.outside="open = false"
 		class="absolute top-full w-full bg-white shadow-xl border-t text-black z-10"
 	>
-		<a
-			href="#"
-			class="block px-4 py-2 transition-colors hover:bg-gray-100"
-			@click.prevent="select = 'ул. Демократическая, 55'; open = false"
-			:class="{'!bg-gray-200': select === 'ул. Демократическая, 55'}"
-			>ул. Демократическая, 55</a
-		>
-		<a
-			href="#"
-			class="block px-4 py-2 transition-colors hover:bg-gray-100"
-			@click.prevent="select = 'Южное шоссе, 12, стр. 3'; open = false"
-			:class="{'!bg-gray-200': select === 'Южное шоссе, 12, стр. 3'}"
-			>Южное шоссе, 12, стр. 3</a
-		>
+		<template x-for="(option, idx) in options" :key="idx">
+			<a
+				href="#"
+				class="block px-4 py-2 transition-colors hover:bg-gray-100"
+				@click.prevent="select = option; open = false"
+				:class="{'!bg-gray-200': select === option}"
+				x-text="option"
+			></a>
+		</template>
 	</div>
 </div>
+:
+<p class="text-red-600 h-full flex items-center justify-center font-bold">Вы не указали массив опций</p>
+}
