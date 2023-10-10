@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_DESCR } from "@/const.js";
 	<div class="absolute inset-0">
 		<div class="swiper banner-slider h-full text-white">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide banner-slide" data-swiper-autoplay="14000">
+				<div class="swiper-slide banner-slide" data-swiper-autoplay="6000">
 					<div class="absolute inset-0 bg-black/50 z-[1]"></div>
 					<div class="container h-full relative z-[2]">
 						<div class="h-full flex flex-col justify-center max-w-4xl">
@@ -16,10 +16,7 @@ import { SITE_NAME, SITE_DESCR } from "@/const.js";
 							>
 								{ SITE_NAME }
 							</h2>
-							<p
-								data-swiper-parallax="-40%"
-								class="text-xs sm:text-xl md:text-3xl mt-3 sm:mt-5 mb-4 sm:mb-10"
-							><Fragment set:html={SITE_DESCR} /></p>
+							<p data-swiper-parallax="-40%" class="text-xs sm:text-xl md:text-3xl mt-3 sm:mt-5 mb-4 sm:mb-10"><Fragment set:html={SITE_DESCR} /></p>
 							<div data-swiper-parallax="-55%">
 								<a
 									class="popup-link btn white"

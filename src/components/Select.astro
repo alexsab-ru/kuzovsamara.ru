@@ -1,0 +1,53 @@
+---
+interface Props {
+	title?: string;
+	descr?: string;
+}
+const { title, descr } = Astro.props;
+---
+
+<div
+	class="select relative w-full"
+	x-data="{open: false, select: null, placeholder: 'Выберите салон'}"
+>
+	<input
+		type="text"
+		name="salon"
+		class="absolute w-0 h-0 invisible opacity-0"
+		x-model="select"
+	/>
+	<div
+		class="bg-white flex justify-between items-center border-2 border-transparent transition-all focus:border-accent-500 pl-4 pr-2 py-2.5 outline-none w-full cursor-pointer"
+		:class="select ? 'text-black' : 'text-black/50'"
+		@keydown.enter="open = !open"
+		@click="open = !open"
+		@keydown.escape="open = false"
+		tabindex="0"
+	>
+		<span x-text="select ?? placeholder"></span>
+		<span
+			class="mdi mdi-chevron-down origin-center transition-transform"
+			:class="{'-rotate-180': open}"></span>
+	</div>
+	<div
+		x-show="open"
+		x-cloak
+		@click.outside="open = false"
+		class="absolute top-full w-full bg-white shadow-xl border-t text-black z-10"
+	>
+		<a
+			href="#"
+			class="block px-4 py-2 transition-colors hover:bg-gray-100"
+			@click.prevent="select = 'ул. Демократическая, 55'; open = false"
+			:class="{'!bg-gray-200': select === 'ул. Демократическая, 55'}"
+			>ул. Демократическая, 55</a
+		>
+		<a
+			href="#"
+			class="block px-4 py-2 transition-colors hover:bg-gray-100"
+			@click.prevent="select = 'Южное шоссе, 12, стр. 3'; open = false"
+			:class="{'!bg-gray-200': select === 'Южное шоссе, 12, стр. 3'}"
+			>Южное шоссе, 12, стр. 3</a
+		>
+	</div>
+</div>

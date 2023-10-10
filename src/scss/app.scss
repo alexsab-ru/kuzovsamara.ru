@@ -5,6 +5,11 @@
 // @tailwind components;
 @tailwind utilities;
 
+@import "fonts";
+@import "ui/buttons";
+@import "ui/form";
+@import "blocks/slider";
+
 section{
     @apply relative py-8 sm:py-16 bg-cover bg-center;
     h2{
@@ -15,7 +20,3 @@ section{
 .dz-remove{
     @apply text-red-500;
 }
-
-@import "fonts";
-@import "ui/buttons";
-@import "blocks/slider";
