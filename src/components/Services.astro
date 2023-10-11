@@ -1,0 +1,49 @@
+---
+const services = [
+	{
+		title: "Кузовные работы",
+		items: [
+			{ name: "Выпрямление вмятин без покраски", price: 2000, priceFrom: true },
+			{ name: "Полная покраска элемента", price: 9500, priceFrom: true },
+			{ name: "Полировка", price: 10000, priceFrom: true },
+			{ name: "Керамика", price: 10000, priceFrom: true },
+			{ name: "Стекло (покрытие)", price: 8000, priceFrom: true },
+			{ name: "Полировка фар", price: 1500, priceFrom: true },
+		],
+	},
+];
+---
+
+{
+	services.length ? (
+		<section class="bg-gray-100">
+			<div class="container">
+				<h2 class="mb-14">Все услуги</h2>
+				
+			{services.map((service) => 
+				service.items.length ? (
+				<h3 class="mb-6 text-2xl text-center">{service.title}</h3>
+				<div class="grid md:grid-cols-2 max-[500px]:gap-4 gap-5">
+					{service.items.map((item) => 
+					<div class="shadow-xl p-4 bg-white flex max-[500px]:flex-col max-md:flex-row max-lg:flex-col items-center max-[500px]:gap-4 gap-5">
+						<h4 class="flex-grow font-extrabold lg:font-light xl:text-lg">{item.name}</h4>
+						<div class="flex items-center flex-nowrap max-[500px]:flex-col max-[500px]:gap-3 gap-4 xl:gap-8">
+							<div class="text-red-500 flex items-end gap-1.5">
+								{item.priceFrom ? (
+									<small class="text-base !leading-none mb-0.5 sm:mb-1">от</small>
+								) : ("")}
+								<span class="text-2xl sm:text-3xl font-bold !leading-none">{item.price.toLocaleString("ru-RU", { style: "currency", currency: "RUB", maximumSignificantDigits: 1 })}</span>
+							</div>
+							<a href="#" class="btn max-[500px]:text-sm max-[500px]:!px-2 max-[500px]:!py-1 !px-4 !py-2">
+								Записаться
+							</a>
+						</div>
+					</div>
+					)}
+				</div>
+				) : ("")
+			)}
+			</div>
+		</section>
+	) : ("")
+}
