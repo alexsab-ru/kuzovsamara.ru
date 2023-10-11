@@ -13,10 +13,10 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.0",
     "@astrojs/tailwind": "^5.0.0",
-    "@mdi/font": "^7.2.96",
     "@types/alpinejs": "^3.0.0",
     "alpinejs": "^3.0.0",
     "astro": "^3.1.4",
+    "astro-icon": "^0.8.1",
     "dropzone": "6.0.0-beta.2",
     "swiper": "^10.3.1",
     "tailwindcss": "^3.0.24"
