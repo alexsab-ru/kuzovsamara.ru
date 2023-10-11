@@ -32,7 +32,7 @@ const services = [
 								{item.priceFrom ? (
 									<small class="text-base !leading-none mb-0.5 sm:mb-1">от</small>
 								) : ("")}
-								<span class="text-2xl sm:text-3xl font-bold !leading-none">{item.price.toLocaleString("ru-RU", { style: "currency", currency: "RUB", maximumSignificantDigits: 1 })}</span>
+								<span class="text-2xl sm:text-3xl font-bold !leading-none">{item.price.toLocaleString("ru-RU", { style: "currency", currency: "RUB", maximumSignificantDigits: 3 })}</span>
 							</div>
 							<a href="#" class="btn max-[500px]:text-sm max-[500px]:!px-2 max-[500px]:!py-1 !px-4 !py-2">
 								Записаться

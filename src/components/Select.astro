@@ -6,7 +6,7 @@ interface Props {
 }
 const { name, placeholder = 'Выберите...', options = [] } = Astro.props;
 const data = JSON.stringify({open: false, select: null, placeholder, options });
-
+import { Icon } from 'astro-icon';
 ---
 
 { options.length ?
@@ -30,9 +30,7 @@ const data = JSON.stringify({open: false, select: null, placeholder, options });
 		tabindex="0"
 	>
 		<span x-text="select ?? placeholder" class="select-none"></span>
-		<span
-			class="mdi mdi-chevron-down origin-center transition-transform"
-			:class="{'-rotate-180': open}"></span>
+		<Icon name="mdi:chevron-down" class="origin-center transition-transform w-5" :class="{'-rotate-180': open}" />
 	</div>
 	<div
 		x-show="open"
