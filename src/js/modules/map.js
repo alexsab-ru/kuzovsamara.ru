@@ -1,7 +1,4 @@
 const parent = document.querySelector(".map");
-// if (!parent) {
-// 	return;
-// }
 
 let maps = [
 		{
@@ -149,6 +146,8 @@ function ymap() {
 	}
 }
 
-parent.onmouseenter = function () {
-    ymap();
-};
+if (parent) {
+	parent.onmouseenter = function () {
+		ymap();
+	}
+}

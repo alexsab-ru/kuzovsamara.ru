@@ -1,8 +1,9 @@
 ---
 import { SITE_NAME } from '@/const.js';
 import { Icon } from 'astro-icon'
+import { log } from 'node_modules/astro/dist/core/logger/core';
+const path = Astro.url.pathname;
 ---
-
 <header 
 	class="sticky md:fixed w-full top-0 left-0 bg-white/80 z-30 transition-colors duration-300" 
 	x-data="header"
@@ -11,7 +12,13 @@ import { Icon } from 'astro-icon'
 	<div class="container">
 		<div class="flex flex-col md:flex-row items-center justify-center sm:justify-between py-2 md:py-2.5 max-md:gap-y-4">
 			<div class="flex flex-nowrap items-center gap-3 divide-x divide-black/20">
-				<div class="max-sm:flex-auto text-2xl uppercase w-min font-mono font-medium !leading-none">{ SITE_NAME }</div>
+				{
+					path === '/' ? (
+						<div class="max-sm:flex-auto text-2xl uppercase w-min font-mono font-medium !leading-none">{ SITE_NAME }</div>
+					) : (
+					<a href="/" class="max-sm:flex-auto text-2xl uppercase w-min font-mono font-medium !leading-none">{ SITE_NAME }</a>
+					)
+				}
 				<div class="max-sm:flex-auto px-3 flex flex-wrap sm:grid grid-cols-2 items-center gap-y-1 gap-x-2">
 					<img src="./img/logos/exeed.svg" class="h-2 w-auto" title="Exeed" alt="exeed">
 					<img src="./img/logos/geely.svg" class="h-4 w-auto" title="Geely" alt="geely">

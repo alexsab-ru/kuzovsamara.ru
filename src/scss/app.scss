@@ -21,3 +21,9 @@ section{
 .dz-remove{
     @apply text-red-500;
 }
+
+.content{
+    *{
+        @apply mb-4;
+    }
+}
