@@ -3,8 +3,19 @@ import Alpine from "alpinejs";
 document.addEventListener("alpine:init", () => {
 	Alpine.data("header", () => ({
 		open: false,
+		scrolling: false,
         init() {
-			document.addEventListener("scroll", (e) => this.open = false);
+			if(document.body.getBoundingClientRect().top != 0){
+				this.scrolling = true
+			}
+			document.addEventListener("scroll", (e) => {
+				if(document.body.getBoundingClientRect().top != 0){
+					this.scrolling = true
+				}else{
+					this.scrolling = false
+				}
+				this.open = false
+			});
 		},
 	}));
 });

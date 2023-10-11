@@ -8,6 +8,7 @@ let maps = [
 			position: [53.275197, 50.227754],
 			zoom: 17,
 			balloonContentHeader: "<h6><b>Кузов Эксперт</b></h6>",
+            
 			balloonContentBody:
 				'<p>пн — вс: 8:00 — 20:00</p> \
         <a href="tel:+78612974444" class="dealer-phone-map d-flex align-items-center">+7 (861) 297-44-44</a><br> \

@@ -4,9 +4,9 @@ import { Icon } from 'astro-icon'
 ---
 
 <header 
-	class="sticky md:fixed w-full top-0 left-0 bg-white z-30 transition-colors duration-300" 
+	class="sticky md:fixed w-full top-0 left-0 bg-white/80 z-30 transition-colors duration-300" 
 	x-data="header"
-	:class="{'!bg-white': open}"
+	:class="{'!bg-white': open, 'shadow-2xl !bg-white': scrolling}"
 >
 	<div class="container">
 		<div class="flex flex-col md:flex-row items-center justify-center sm:justify-between py-2 md:py-2.5 max-md:gap-y-4">
