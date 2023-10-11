@@ -6,26 +6,23 @@ const parent = document.querySelector(".map");
 let maps = [
 		{
 			position: [53.275197, 50.227754],
-			zoom: 17,
 			balloonContentHeader: "<h6><b>Кузов Эксперт</b></h6>",
-            
 			balloonContentBody:
 				'<p>пн — вс: 8:00 — 20:00</p> \
-        <a href="tel:+78612974444" class="dealer-phone-map d-flex align-items-center">+7 (861) 297-44-44</a><br> \
-        <a href="https://yandex.ru/maps/?from=api-maps&ll=38.937629%2C45.017397&mode=routes&origin=jsapi_2_1_79&rtext=~45.017397%2C38.937629&rtt=auto&ruri=~&z=17"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
+        <a href="tel:+78463210000" class="text-lg text-accent-500">8 (846) 321-00-00</a><br> \
+        <a href="https://yandex.ru/maps/51/samara/?from=api-maps&ll=50.228953%2C53.274141&mode=routes&origin=jsapi_2_1_79&pt=50.227754%2C53.275197~50.178598%2C53.138397&rtext=~53.274703%2C50.227773&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzM5MDc3OBJJ0KDQvtGB0YHQuNGPLCDQodCw0LzQsNGA0LAsINCU0LXQvNC-0LrRgNCw0YLQuNGH0LXRgdC60LDRjyDRg9C70LjRhtCwLCA1NSIKDTnpSEIVzhlVQg%2C%2C&z=16.89"  target="_blank" class="">📍 Как добраться</a><br>',
 			balloonContentFooter: "",
-			hintContent: "Кузов Эксперт",
+			hintContent: "Кузов Эксперт на Демократической",
 		},
 		{
 			position: [53.138397, 50.178598],
-			zoom: 17,
 			balloonContentHeader: "<h6><b>Кузов Эксперт</b></h6>",
 			balloonContentBody:
 				'<p>пн — вс: 8:00 — 20:00</p> \
-        <a href="tel:+78612974444" class="dealer-phone-map d-flex align-items-center">+7 (861) 297-44-44</a><br> \
-        <a href="https://yandex.ru/maps/?from=api-maps&ll=38.937629%2C45.017397&mode=routes&origin=jsapi_2_1_79&rtext=~45.017397%2C38.937629&rtt=auto&ruri=~&z=17"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
+        <a href="tel:+78463210909" class="text-lg text-accent-500">8 (846) 321-09-09</a><br> \
+        <a href="https://yandex.ru/maps/51/samara/?from=api-maps&ll=50.178605%2C53.138478&mode=routes&origin=jsapi_2_1_79&pt=50.178598%2C53.138397~50.227754%2C53.275197&rtext=~53.138325%2C50.178537&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzM1NjM0NxI40KDQvtGB0YHQuNGPLCDQodCw0LzQsNGA0LAsINCu0LbQvdC-0LUg0YjQvtGB0YHQtSwgMTLRgTMiCg3itkhCFbeNVEI%2C&z=18.45"  target="_blank" class="">📍 Как добраться</a><br>',
 			balloonContentFooter: "",
-			hintContent: "Кузов Эксперт",
+			hintContent: "Кузов Эксперт на Южном",
 		},
 	],
 	start_load_script = false, // Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)

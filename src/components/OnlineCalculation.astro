@@ -3,7 +3,7 @@ import Select from '@/components/Select.astro';
 const options = ['ул. Демократическая, 55', 'Южное шоссе, 12, стр. 3'];
 ---
 
-<section class="text-white z-[1]" style="background-image: url('img/online-bg.jpg');">
+<section class="text-white z-[1]" style="background-image: url('img/online-bg.jpg');" id="online-calc">
 	<div class="absolute inset-0 bg-sky-900/90 z-[-1]"></div>
 	<div class="container">
 		<h2 class="text-center mb-8">Онлайн расчет</h2>
@@ -44,7 +44,7 @@ const options = ['ул. Демократическая, 55', 'Южное шос�
 							Чтобы продолжить, установите флажок
 						</div>
 					</label>
-					<button type="submit" class="btn white">Отправить</button>
+					<input type="submit" class="btn white" value="Отправить">
 				</div>
 			</div>
 		</form>

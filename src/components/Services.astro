@@ -16,7 +16,7 @@ const services = [
 
 {
 	services.length ? (
-		<section class="bg-gray-100">
+		<section class="bg-gray-100 relative z-10" id="services" >
 			<div class="container">
 				<h2 class="mb-14">Все услуги</h2>
 				
@@ -34,7 +34,12 @@ const services = [
 								) : ("")}
 								<span class="text-2xl sm:text-3xl font-bold !leading-none">{item.price.toLocaleString("ru-RU", { style: "currency", currency: "RUB", maximumSignificantDigits: 3 })}</span>
 							</div>
-							<a href="#" class="btn max-[500px]:text-sm max-[500px]:!px-2 max-[500px]:!py-1 !px-4 !py-2">
+							<a 
+								href="#common-modal" 
+								class="popup-link btn max-[500px]:text-sm max-[500px]:!px-2 max-[500px]:!py-1 !px-4 !py-2"
+								data-title={`Запись на <span class="lowercase">${service.title}</span><div class="text-xl font-extrabold">${item.name}</div>`} 
+								data-form_name={`Запись на ${service.title} - ${item.name}`}
+							>
 								Записаться
 							</a>
 						</div>

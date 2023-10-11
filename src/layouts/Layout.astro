@@ -11,6 +11,7 @@ import { SITE_NAME, SITE_DESCR } from '@/const.js';
 
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import Modals from '@/components/Modals.astro';
 ---
 
 <!doctype html>
@@ -30,6 +31,7 @@ import Footer from '@/components/Footer.astro';
 			<slot />
 		</main>
 		<Footer />
+		<Modals />
 	</body>
 </html>
 <style is:global lang="scss">
