@@ -50,7 +50,7 @@ import { Icon } from 'astro-icon'
 		x-show="open"
 		x-cloak 
 		@click.outside="open = false"
-		class="relative border-t border-t-black/10 py-6"
+		class="relative border-t border-t-black/10 py-6 shadow-2xl"
 	>
 		<button class="w-10 h-10 absolute right-0 top-0 text-2xl font-mono transition-opacity opacity-60 hover:opacity-100" @click.prevent="open = false">&times;</button>
 		<div class="container">
