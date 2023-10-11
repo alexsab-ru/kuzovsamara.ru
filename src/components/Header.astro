@@ -1,5 +1,6 @@
 ---
 import { SITE_NAME } from '@/const.js';
+import { Icon } from 'astro-icon'
 ---
 
 <header 
@@ -8,7 +9,7 @@ import { SITE_NAME } from '@/const.js';
 	:class="{'!bg-white': open}"
 >
 	<div class="container">
-		<div class="flex flex-col md:flex-row items-center justify-center sm:justify-between py-2 md:py-4 max-md:gap-y-4">
+		<div class="flex flex-col md:flex-row items-center justify-center sm:justify-between py-2 md:py-2.5 max-md:gap-y-4">
 			<div class="flex flex-nowrap items-center gap-3 divide-x divide-black/20">
 				<div class="max-sm:flex-auto text-2xl uppercase w-min font-mono font-medium !leading-none">{ SITE_NAME }</div>
 				<div class="max-sm:flex-auto px-3 flex flex-wrap sm:grid grid-cols-2 items-center gap-y-1 gap-x-2">
@@ -22,8 +23,8 @@ import { SITE_NAME } from '@/const.js';
 			</div>
 			<div class="flex items-center max-sm:justify-center max-sm:flex-wrap gap-3 sm:gap-10">
 				<div class="hidden lg:flex flex-col">
-					<a href="tel:+78463210000" class="font-extrabold text-black/80 text-base md:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="ул. Демократическая, 55"><span class="mdi mdi-cellphone text-xl"></span> 8 (846) 321-00-00</a>
-					<a href="tel:+78463210909" class="font-extrabold text-black/80 text-base md:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="Южное шоссе, 12, стр. 3"><span class="mdi mdi-cellphone text-xl"></span> 8 (846) 321-09-09</a>
+					<a href="tel:+78463210000" class="font-extrabold text-black/80 text-base md:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="ул. Демократическая, 55"><Icon name="ic:outline-phone-android" class="w-6" /> 8 (846) 321-00-00</a>
+					<a href="tel:+78463210909" class="font-extrabold text-black/80 text-base md:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="Южное шоссе, 12, стр. 3"><Icon name="ic:outline-phone-android" class="w-6" /> 8 (846) 321-09-09</a>
 				</div>
 				<div>
 					<a 
@@ -55,12 +56,12 @@ import { SITE_NAME } from '@/const.js';
 		<div class="container">
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-md:divide-y max-md:gap-4">
 				<div class="flex flex-col gap-3 md:pl-8 md:border-l border-l-black/10 max-md:last:pt-4">
-					<a href="#" class="text-xl flex items-center gap-1 flex-nowrap"><span class="mdi mdi-map-marker-outline text-2xl"></span> ул. Демократическая, 55</a>
-					<a href="tel:+78463210000" class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><span class="mdi mdi-cellphone"></span> 8 (846) 321-00-00</a>
+					<a href="#" class="text-xl flex items-center gap-1 flex-nowrap"><Icon name="clarity:map-marker-line" class="w-8" /> ул. Демократическая, 55</a>
+					<a href="tel:+78463210000" class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><Icon name="ic:outline-phone-android" class="w-7" /> 8 (846) 321-00-00</a>
 				</div>
 				<div class="flex flex-col gap-3 md:pl-8 md:border-l border-l-black/10 max-md:last:pt-4">
-					<a href="#" class="text-xl flex items-center gap-1 flex-nowrap"><span class="mdi mdi-map-marker-outline text-2xl"></span> Южное шоссе, 12, стр. 3</a>
-					<a href="tel:+78463210909" class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><span class="mdi mdi-cellphone"></span> 8 (846) 321-09-09</a>
+					<a href="#" class="text-xl flex items-center gap-1 flex-nowrap"><Icon name="clarity:map-marker-line" class="w-8" /> Южное шоссе, 12, стр. 3</a>
+					<a href="tel:+78463210909" class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><Icon name="ic:outline-phone-android" class="w-7" /> 8 (846) 321-09-09</a>
 				</div>
 			</div>
 		</div>
