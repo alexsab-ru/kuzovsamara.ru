@@ -5,6 +5,6 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), alpinejs()],
-  site: 'https://alexsab-ru.github.io',
-  base: '/kuzovsamara.ru'
+  // site: 'https://alexsab-ru.github.io',
+  // base: '/kuzovsamara.ru'
 });
