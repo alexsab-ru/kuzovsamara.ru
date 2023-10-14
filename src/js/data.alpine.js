@@ -18,6 +18,23 @@ document.addEventListener("alpine:init", () => {
 			});
 		},
 	}));
+	Alpine.data("scrollTop", (t) => ({
+		scrolled: !1,
+		init() {
+			(this.scrolled =
+				document.documentElement.scrollTop > window.innerHeight / 1),
+				document.addEventListener("scroll", (e) => this.onScroll(e));
+		},
+		onScroll(e) {
+			this.scrolled = document.documentElement.scrollTop > window.innerHeight / 1;
+		},
+		onClick() {
+			document.documentElement.scroll({
+				top: 0,
+				behavior: "smooth",
+			});
+		},
+	}));
 });
 
 // window.Alpine = Alpine;
