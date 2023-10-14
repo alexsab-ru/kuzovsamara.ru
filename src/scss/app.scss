@@ -11,6 +11,10 @@
 @import "blocks/slider";
 @import "blocks/map.sass";
 
+body{
+    @apply selection:bg-fuchsia-500 selection:text-white;
+}
+
 section{
     @apply relative py-8 sm:py-16 bg-cover bg-center;
     h2{

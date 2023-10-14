@@ -19,6 +19,9 @@ export const theme = {
     fontFamily: {
       'sans': ['Gilroy', ...defaultTheme.fontFamily.sans],
     },
+    boxShadow: {
+      '3xl': '0 35px 60px rgba(0, 0, 0, 0.3)',
+    }
   },
 }
 export const plugins = []
