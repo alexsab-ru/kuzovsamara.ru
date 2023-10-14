@@ -5,15 +5,17 @@ document.querySelectorAll('a[href^="#"]:not(.popup-link)').forEach((link) => {
 		let href = this.getAttribute("href").substring(1);
 
 		const scrollTarget = document.getElementById(href);
+		
+		if(scrollTarget){
+			const topOffset = document.querySelector("header").offsetHeight;
+			// const topOffset = 0; // если не нужен отступ сверху
+			const elementPosition = scrollTarget.getBoundingClientRect().top;
+			const offsetPosition = elementPosition - topOffset;
 
-		const topOffset = document.querySelector("header").offsetHeight;
-		// const topOffset = 0; // если не нужен отступ сверху
-		const elementPosition = scrollTarget.getBoundingClientRect().top;
-		const offsetPosition = elementPosition - topOffset;
-
-		window.scrollBy({
-			top: offsetPosition,
-			behavior: "smooth",
-		});
+			window.scrollBy({
+				top: offsetPosition,
+				behavior: "smooth",
+			});
+		}
 	});
 });
