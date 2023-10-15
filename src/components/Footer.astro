@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon'
+import { phoneFormat } from '@/use/numbers.format';
+import salons from '@/salons.json';
 ---
 
 <footer class="bg-black/90 text-white py-14 relative">
@@ -29,26 +31,20 @@ import { Icon } from 'astro-icon'
             <div class="lg:col-span-2">
                 <h3 class="text-xl mb-3 md:mb-5">Контакты</h3>
                 <div class="grid lg:grid-cols-2 gap-8 lg:gap-5">
+                {
+                    salons.map(salon => (
                     <div class="flex flex-col gap-3">
-                        <a href="#" class="flex items-center gap-1 flex-nowrap">
+                        <span class="flex items-center gap-1 flex-nowrap">
                             <Icon name="clarity:map-marker-line" class="w-6" /> 
-                            ул. Демократическая, 55
-                        </a>
-                        <a href="tel:+78463210000" class="flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500">
+                            {salon.address}
+                        </span>
+                        <a href={`tel:${phoneFormat(salon.phone)}`} class="flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500">
                             <Icon name="ic:outline-phone-android" class="w-5" /> 
-                            8 (846) 321-00-00
+                            {salon.phone}
                         </a>
                     </div>
-                    <div class="flex flex-col gap-3">
-                        <a href="#" class="flex items-center gap-1 flex-nowrap">
-                            <Icon name="clarity:map-marker-line" class="w-6" /> 
-                            Южное шоссе, 12, стр. 3
-                        </a>
-                        <a href="tel:+78463210909" class="flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500">
-                            <Icon name="ic:outline-phone-android" class="w-5" /> 
-                            8 (846) 321-09-09
-                        </a>
-                    </div>
+                    ))
+                }
                 </div>
             </div>
 

@@ -1,9 +1,11 @@
 ---
 import { SITE_NAME } from '@/const.js';
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
+import { phoneFormat, declOfNums } from '@/use/numbers.format';
+import salons from '@/salons.json';
+
 const path = Astro.url.pathname;
 ---
-
 <div x-data="header">
 	<header 
 	class="fixed w-full top-0 left-0 bg-white lg:bg-white/80 z-30 transition-all duration-300 max-lg:shadow-3xl" 
@@ -30,8 +32,11 @@ const path = Astro.url.pathname;
 			</div>
 			<div class="flex items-center max-[430px]:gap-3 gap-5 lg:gap-10">
 				<div class="hidden md:flex flex-col">
-					<a href="tel:+78463210000" class="font-extrabold text-black/80 text-base lg:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="ул. Демократическая, 55"><Icon name="ic:outline-phone-android" class="w-6" /> 8 (846) 321-00-00</a>
-					<a href="tel:+78463210909" class="font-extrabold text-black/80 text-base lg:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="Южное шоссе, 12, стр. 3"><Icon name="ic:outline-phone-android" class="w-6" /> 8 (846) 321-09-09</a>
+				{
+					salons.map(salon => (
+					<a href={`tel:${phoneFormat(salon.phone)}`} class="font-extrabold text-black/80 text-base lg:text-lg flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500" title="ул. Демократическая, 55"><Icon name="ic:outline-phone-android" class="w-6" /> {salon.phone}</a>
+					))
+				}
 				</div>
 				<div class="hidden lg:block">
 					<a 
@@ -40,7 +45,7 @@ const path = Astro.url.pathname;
 						@click.prevent="open = !open"
 						@keydown.escape="open = false"
 					>Адреса салонов</a>
-					<small class="block text-xs">2 салона</small>
+					<small class="block text-xs">{salons.length}&nbsp;{declOfNums(salons.length, ['салон', 'салона', 'салонов'])}</small>
 				</div>
 				<a 
 					class="popup-link btn hidden lg:block"
@@ -106,14 +111,16 @@ const path = Astro.url.pathname;
 				<a href="#services" class="scroll-link">Услуги сервиса</a>
 				<a href="#contacts" class="scroll-link">Контакты</a>
 			</div>
+
+		{
+			salons.map(salon => (
 			<div class="flex flex-col gap-3 py-5 px-5 last:border-t">
-				<a href="#contacts" class="text-xl flex items-center gap-1 flex-nowrap"><Icon name="clarity:map-marker-line" class="w-8" /> ул. Демократическая, 55</a>
-				<a href="tel:+78463210000" class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><Icon name="ic:outline-phone-android" class="w-7" /> 8 (846) 321-00-00</a>
+				<a href="#contacts" class="text-xl flex items-center gap-1 flex-nowrap"><Icon name="clarity:map-marker-line" class="w-8" /> {salon.address}</a>
+				<a href={`tel:${phoneFormat(salon.phone)}`} class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><Icon name="ic:outline-phone-android" class="w-7" /> {salon.phone}</a>
 			</div>
-			<div class="flex flex-col gap-3 py-5 px-5 last:border-t">
-				<a href="#contacts" class="text-xl flex items-center gap-1 flex-nowrap"><Icon name="clarity:map-marker-line" class="w-8" /> Южное шоссе, 12, стр. 3</a>
-				<a href="tel:+78463210909" class="text-2xl font-extrabold text-black/80 flex items-center gap-1 flex-nowrap transition-colors hover:text-accent-500"><Icon name="ic:outline-phone-android" class="w-7" /> 8 (846) 321-09-09</a>
-			</div>
+			))
+		}
+
 		</div>
 	</div>
 </div>
