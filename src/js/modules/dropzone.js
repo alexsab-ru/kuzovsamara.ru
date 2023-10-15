@@ -11,7 +11,7 @@ const dropzones = [];
 if (fileUploads.length) {
 	fileUploads.forEach(function (fileUpload, idx) {
 		dropzones[idx] = new Dropzone(fileUpload, {
-			url: '#',
+			url: 'https://alexsab.ru/lead/kuzovsamara/',
 			addRemoveLinks: true,
 			parallelUploads: 1,
 			acceptedFiles: '.jpg,.jpeg,.png',
