@@ -36,7 +36,7 @@ import { Icon } from 'astro-icon';
 		x-show="open"
 		x-cloak
 		@click.outside="open = false"
-		class="absolute top-full w-full bg-white shadow-xl border-t text-black z-10"
+		class="absolute top-full w-full bg-white shadow-xl border-t text-black z-[100]"
 	>
 		<template x-for="(option, idx) in options" :key="idx">
 			<a
