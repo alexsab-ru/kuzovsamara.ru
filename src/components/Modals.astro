@@ -1,3 +1,8 @@
+---
+import Button from '@/components/Button.astro';
+import Input from '@/components/Input.astro';
+---
+
 <!-- MODALS -->
 <div class="fixed w-screen h-screen left-0 top-0 bg-black bg-opacity-90 overflow-x-hidden overflow-y-auto hidden modal-overlay z-50" id="common-modal" data-close>
     <div class="modal-content relative top-20 mb-10 left-1/2 translate-x-[-50%] -translate-y-10 transition-all duration-1000 max-w-xl w-full bg-white font-medium text-dark py-8 px-4 sm:p-8">
@@ -12,14 +17,9 @@
         <form class="flex flex-col gap-4" id="rating-form">
             <input type="hidden" name="form" value="">
             <input type="email" tabindex="-1" name="email" class="h-0 opacity-0 absolute -z-[100]" placeholder="mail@example.com">
-            <div class="w-full">
-                <input type="text" name="name" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 focus:border-yellow px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="Ваше имя">
-                <div class="error-message text-xs text-red-500 hidden name"></div>
-            </div>
-            <div class="w-full">
-                <input type="tel" name="phone" class="border border-black border-opacity-20 transition-all focus:border-opacity-90 focus:border-yellow px-4 py-2.5 mb-1.5 outline-none w-full font-normal" placeholder="+7 (999) 999-99-99*">
-                <div class="error-message text-xs text-red-500 hidden phone">Веден некорректный номер телефона</div>
-            </div>
+            <Input name="name" classes='border-gray-100' placeholder="Ваше имя" />
+			<Input type="tel" name="phone" classes='border-gray-100' placeholder="+7 (999) 999-99-99*" required errorClasses='text-red-500' />
+
             <label class="cursor-pointer flex items-center flex-wrap">
                 <input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
                 <div class="flex flex-wrap gap-x-2 text-gray-800">
@@ -28,8 +28,10 @@
                 </div>
                 <div class="error-message text-xs text-red-500 mt-1 w-full hidden agree">Чтобы продолжить, установите флажок</div>
             </label>
+
             <input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
-            <input type="submit" class="btn w-full" value="Отправить">
+
+            <Button view="form-button" classes="w-full" title="Отправить" />
         </form>
     </div>
 </div>

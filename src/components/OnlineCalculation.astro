@@ -2,6 +2,7 @@
 import Select from '@/components/Select.astro';
 const options = ['ул. Демократическая, 55', 'Южное шоссе, 12, стр. 3'];
 import Button from '@/components/Button.astro';
+import Input from '@/components/Input.astro';
 ---
 
 <section class="section text-white z-[1]" style="background-image: url('img/online-bg.jpg');" id="online-calc">
@@ -10,24 +11,15 @@ import Button from '@/components/Button.astro';
 		<h2 class="text-center mb-8">Онлайн расчет</h2>
 		<p class="uppercase text-xl text-center mb-10">От локальной покраски до кузовных работ</p>
 		<form class="max-w-2xl w-full mx-auto">
+			<input type="hidden" name="form" value="Онлайн расчет">
+			<input type="email" tabindex="-1" name="email" class="h-0 opacity-0 absolute -z-[100]" placeholder="mail@example.com">
 			<div class="grid grid-cols-1 min-[600px]:grid-cols-2 gap-5">
-				<div class="w-full">
-					<input type="text" name="name" class="border-2 border-transparent transition-all focus:border-accent-500 px-4 py-2.5 outline-none w-full text-black" placeholder="Ваше имя">
-				</div>
-				<div class="w-full">
-					<input type="tel" name="phone" class="border-2 border-transparent transition-all focus:border-accent-500 px-4 py-2.5 outline-none w-full text-black" placeholder="+7 (999) 999-99-99*">
-					<div class="error-message text-xs text-yellow-300 phone hidden">Введен некорректный номер телефона</div>
-				</div>
-				
-				<Select 
-					name="salon" 
-					placeholder="Выберите салон" 
-					options={options} 
-				/>
 
-				<div class="w-full">
-					<input type="text" name="vin" class="border-2 border-transparent transition-all focus:border-accent-500 px-4 py-2.5 outline-none w-full text-black" placeholder="VIN">
-				</div>
+				<Input name="name" classes='border-transparent' placeholder="Ваше имя" />
+				<Input type="tel" name="phone" classes='border-transparent' placeholder="+7 (999) 999-99-99*" required errorClasses='text-yellow-300' />				
+				<Select name="salon" placeholder="Выберите салон" options={options} />
+				<Input name="vin" classes='border-transparent' placeholder="VIN" />
+
 				<div class="min-[600px]:col-span-2">
 					<div class="dropzone file-upload p-5 bg-white border-2 border-black border-dashed focus:border-accent-500 h-auto cursor-pointer text-black" tabindex="-1"></div>
 					<div class="error-message text-yellow-300 hidden">ERROR</div>
@@ -45,11 +37,8 @@ import Button from '@/components/Button.astro';
 							Чтобы продолжить, установите флажок
 						</div>
 					</label>
-					<Button 
-						view="form-button"
-						classes="white" 
-						title="Отправить"
-					/>
+					<input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
+					<Button view="form-button" classes="white" title="Отправить" />
 				</div>
 			</div>
 		</form>
