@@ -20,12 +20,12 @@ const label = '<span>Я согласен на</span><a href="/privacy-policy" cl
 			<div class="grid grid-cols-1 min-[600px]:grid-cols-2 gap-5">
 
 				<Input name="name" classes='border-transparent' placeholder="Ваше имя" />
-				<Input type="tel" name="phone" classes='border-transparent' placeholder="+7 (999) 999-99-99*" required errorClasses='text-yellow-300' />				
+				<Input type="tel" name="phone" classes='border-transparent' placeholder="+7 (999) 999-99-99*" required errorClasses='text-yellow-300' />
 				<Select name="salon" placeholder="Выберите салон" options={options} />
 				<Input name="vin" classes='border-transparent' placeholder="VIN" />
 
 				<div class="min-[600px]:col-span-2">
-					<div class="dropzone file-upload p-5 bg-white border-2 border-black border-dashed focus:border-accent-500 h-auto cursor-pointer text-black" tabindex="-1"></div>
+					<div class="dropzone file-upload p-0 sm:p-5 bg-white border-2 border-black border-dashed focus:border-accent-500 h-auto cursor-pointer text-black" tabindex="-1"></div>
 					<div class="error-message text-yellow-300 hidden">ERROR</div>
 					<div class="success-message text-green-300 hidden">SUCCESS</div>
 				</div>
