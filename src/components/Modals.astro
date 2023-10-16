@@ -1,6 +1,8 @@
 ---
 import Button from '@/components/Button.astro';
 import Input from '@/components/Input.astro';
+import Checkbox from '@/components/Checkbox.astro';
+const label = '<span>Я согласен на</span><a href="/privacy-policy" class="underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>'
 ---
 
 <!-- MODALS -->
@@ -20,14 +22,7 @@ import Input from '@/components/Input.astro';
             <Input name="name" classes='border-gray-100' placeholder="Ваше имя" />
 			<Input type="tel" name="phone" classes='border-gray-100' placeholder="+7 (999) 999-99-99*" required errorClasses='text-red-500' />
 
-            <label class="cursor-pointer flex items-center flex-wrap">
-                <input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
-                <div class="flex flex-wrap gap-x-2 text-gray-800">
-                    <span class="fake-checkbox-black mt-0.5 w-4 h-4 border border-black inline-block flex-shrink-0 transition-all relative"></span>
-                    <span>Я согласен на</span> <a href="/privacy-policy" class="text-black underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>
-                </div>
-                <div class="error-message text-xs text-red-500 mt-1 w-full hidden agree">Чтобы продолжить, установите флажок</div>
-            </label>
+            <Checkbox name='agree' label={label} color='black' required errorClasses='text-red-500 w-full' />
 
             <input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
 

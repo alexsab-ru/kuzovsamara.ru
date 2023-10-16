@@ -3,6 +3,8 @@ import Select from '@/components/Select.astro';
 const options = ['ул. Демократическая, 55', 'Южное шоссе, 12, стр. 3'];
 import Button from '@/components/Button.astro';
 import Input from '@/components/Input.astro';
+import Checkbox from '@/components/Checkbox.astro';
+const label = '<span>Я согласен на</span><a href="/privacy-policy" class="underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>'
 ---
 
 <section class="section text-white z-[1]" style="background-image: url('img/online-bg.jpg');" id="online-calc">
@@ -26,17 +28,7 @@ import Input from '@/components/Input.astro';
 					<div class="success-message text-green-300 hidden">SUCCESS</div>
 				</div>
 				<div class="min-[600px]:col-span-2">
-					<label class="cursor-pointer flex items-center flex-wrap text-sm mb-5">
-						<input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
-						<div class="flex flex-wrap gap-x-2 text-white/80">
-							<span class="fake-checkbox-white"></span>
-							<span>Я согласен на</span>
-							<a href="/privacy-policy" class="text-white/80 underline transition-all hover:no-underline" target="_blank">обработку персональных данных</a>
-						</div>
-						<div class="error-message text-xs text-yellow-300 hidden w-full agree">
-							Чтобы продолжить, установите флажок
-						</div>
-					</label>
+					<Checkbox name='agree' label={label} required errorClasses='text-yellow-300 w-full' />
 					<input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
 					<Button view="form-button" classes="white" title="Отправить" />
 				</div>

@@ -2,6 +2,13 @@
 import { Icon } from 'astro-icon'
 import { phoneFormat } from '@/use/numbers.format';
 import salons from '@/data/salons.json';
+const links = [
+	{url: '/', name: 'Главная'},
+	{url: '#online-calc', name: 'Онлайн расчет'},
+	{url: '#advantages', name: 'Преимущества'},
+	{url: '#services', name: 'Услуги сервиса'},
+];
+const path = Astro.url.pathname;
 ---
 
 <footer class="bg-black/90 text-white py-14 relative">
@@ -22,10 +29,11 @@ import salons from '@/data/salons.json';
             <div class="">
                 <h3 class="text-xl mb-3 md:mb-5">Разделы сайта</h3>
                 <ul class="space-y-2">
-                    <li><a href="/" class="transition hover:underline">Главная</a></li>
-                    <li><a href="#online-calc" class="transition hover:underline">Онлайн расчет</a></li>
-                    <li><a href="#advantages" class="transition hover:underline">Преимущества</a></li>
-                    <li><a href="#services" class="transition hover:underline">Услуги</a></li>
+                {
+                    links.map(link => (
+                    <li><a href={link.url} class={`transition hover:underline ${path === link.url ? 'font-extrabold' : ''}`}>{link.name}</a></li>
+                    ))
+                }
                 </ul>
             </div>
             <div class="lg:col-span-2">

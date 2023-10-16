@@ -25,7 +25,6 @@ function init() {
 	}
 	myMapTemp.behaviors.disable("scrollZoom");
 	salons.map((salon) => {
-		console.log(salon.map.coords);
 		myMapTemp.geoObjects.add(
 			new ymaps.Placemark(
 				[salon.map.coords[0], salon.map.coords[1]],
