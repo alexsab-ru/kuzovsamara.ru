@@ -134,7 +134,7 @@ $$("form").forEach((form) => {
 		}
 		let formData = new FormData(form);
 		for (let i = 0; i < window.filesToUpload.length; i++) {
-			formData.append("file" + i, window.filesToUpload[i]);
+			formData.append("file[]", window.filesToUpload[i]);
 		}
 		if(getCookie('fta')) {
 			formData.append("fta", true);
@@ -166,30 +166,37 @@ $$("form").forEach((form) => {
 		// await fetch('https://alexsab.ru/lead/test/', {
 		await fetch("https://alexsab.ru/lead/kuzovsamara/", {
 			method: "POST",
-			mode: "cors",
-			cache: "no-cache",
-			credentials: "same-origin",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-			},
-			body: params,
+			body: formData,
 		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				stateBtn(btn, "Отправить");
-				if (data.answer == "required") {
-					window.WebsiteAnalytics.dataLayer("form-required");
-					showErrorMes(form, data.field, data.message);
-					return;
-				} else if (data.answer == "error") {
-					window.WebsiteAnalytics.dataLayer("form-error");
-					showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
-				} else {
-					window.WebsiteAnalytics.dataLayer("form-success", formDataObj);
-					showMessageModal(messageModal, successIcon, successText);
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error("Server returned " + res.status + " " + res.statusText);
 				}
-				form.reset();
+				return res.text(); // Вместо res.json()
+			})
+			.then((text) => {
+				try {
+					const data = JSON.parse(text);
+					// console.log(data);
+					stateBtn(btn, "Отправить");
+					if (data.answer == "required") {
+						window.WebsiteAnalytics.dataLayer("form-required");
+						showErrorMes(form, data.field, data.message);
+						return;
+					} else if (data.answer == "error") {
+						window.WebsiteAnalytics.dataLayer("form-error");
+						showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
+					} else {
+						window.WebsiteAnalytics.dataLayer("form-success", formDataObj);
+						showMessageModal(messageModal, successIcon, successText);
+					}
+					form.reset();
+				} catch (e) {
+					window.WebsiteAnalytics.dataLayer("form-error");
+					showMessageModal(messageModal, errorIcon, errorText + "<br>Ошибка обработки данных");
+					console.error("Ошибка при парсинге JSON: " + e.message);
+					console.error("Полученный текст: " + text);
+				}
 			})
 			.catch((error) => {
 				window.WebsiteAnalytics.dataLayer("form-error");
