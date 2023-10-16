@@ -56,7 +56,7 @@ if (fileUploads.length) {
 				return this._updateMaxFilesReachedClass();
 			},
 			thumbnail(file, dataUrl) {
-				console.log(file);
+				// console.log(file);
 				if (file.previewElement) {
 					file.previewElement.classList.remove("dz-file-preview");
 					for (let thumbnailElement of file.previewElement.querySelectorAll(
