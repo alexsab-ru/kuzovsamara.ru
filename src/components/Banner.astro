@@ -1,38 +1,17 @@
 ---
-import { SITE_NAME, SITE_DESCR } from "@/const.js";
-import Button from '@/components/Button.astro';
+import BannerItem from '@/components/BannerItem.astro';
+import banners from '@/data/banners.json'
 ---
 
 <div class="banner relative max-lg:pt-20 pb-[56.25%] max-[400px]:pb-[75%]">
 	<div class="absolute inset-0">
 		<div class="swiper banner-slider h-full text-white">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide banner-slide" data-swiper-autoplay="6000">
-					<div class="absolute inset-0 bg-black/50 z-[1]"></div>
-					<div class="container h-full relative z-[2]">
-						<div class="h-full flex flex-col justify-center max-w-4xl">
-							<h2
-								class="text-3xl md:text-4xl lg:text-6xl uppercase font-bold"
-								data-swiper-parallax="-20%"
-							>
-								{ SITE_NAME }
-							</h2>
-							<p data-swiper-parallax="-40%" class="text-sm sm:text-xl md:text-3xl mt-3 sm:mt-5 mb-4 sm:mb-10"><Fragment set:html={SITE_DESCR} /></p>
-							<div data-swiper-parallax="-55%">
-
-								<Button 
-									classes="popup-link white inline-block !py-2 sm:py-3 text-sm sm:text-base" 
-									url="#common-modal" 
-									title="Онлайн запись"
-									dataTitle="Онлайн запись на сервис"
-									dataFormName="Онлайн запись на сервис. Баннер"
-								/>
-								
-							</div>
-						</div>
-					</div>
-					<img src="./img/banners/1.jpg" class="absolute inset-0 h-full w-full object-cover object-center" alt={ SITE_NAME }>
-				</div>
+				{
+					banners.map(banner => (
+						<BannerItem banner={banner}/>
+					))
+				}
 			</div>
 
 			<div class="swiper-pagination banner-pagination"></div>
