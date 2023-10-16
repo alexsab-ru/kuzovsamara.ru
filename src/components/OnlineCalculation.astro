@@ -1,6 +1,8 @@
 ---
 import Select from '@/components/Select.astro';
-const options = ['ул. Демократическая, 55', 'Южное шоссе, 12, стр. 3'];
+const options = [];
+import salons from '@/data/salons.json';
+salons.map(salon => {options.push(salon.address)});
 import Button from '@/components/Button.astro';
 import Input from '@/components/Input.astro';
 import Checkbox from '@/components/Checkbox.astro';
