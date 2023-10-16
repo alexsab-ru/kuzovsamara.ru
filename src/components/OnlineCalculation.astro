@@ -1,6 +1,7 @@
 ---
 import Select from '@/components/Select.astro';
 const options = ['ул. Демократическая, 55', 'Южное шоссе, 12, стр. 3'];
+import Button from '@/components/Button.astro';
 ---
 
 <section class="section text-white z-[1]" style="background-image: url('img/online-bg.jpg');" id="online-calc">
@@ -44,7 +45,11 @@ const options = ['ул. Демократическая, 55', 'Южное шос�
 							Чтобы продолжить, установите флажок
 						</div>
 					</label>
-					<input type="submit" class="btn white" value="Отправить">
+					<Button 
+						view="form-button"
+						classes="white" 
+						title="Отправить"
+					/>
 				</div>
 			</div>
 		</form>

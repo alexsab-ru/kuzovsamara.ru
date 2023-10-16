@@ -1,5 +1,6 @@
 ---
 import { SITE_NAME, SITE_DESCR } from "@/const.js";
+import Button from '@/components/Button.astro';
 ---
 
 <div class="banner relative max-lg:pt-20 pb-[56.25%] max-[400px]:pb-[75%]">
@@ -18,14 +19,15 @@ import { SITE_NAME, SITE_DESCR } from "@/const.js";
 							</h2>
 							<p data-swiper-parallax="-40%" class="text-sm sm:text-xl md:text-3xl mt-3 sm:mt-5 mb-4 sm:mb-10"><Fragment set:html={SITE_DESCR} /></p>
 							<div data-swiper-parallax="-55%">
-								<a
-									class="popup-link btn white inline-block !py-2 sm:py-3 text-sm sm:text-base"
-									href="#common-modal"
-									data-title="Онлайн запись на сервис"
-									data-form_name="Онлайн запись на сервис"
-								>
-									Онлайн запись
-								</a>
+
+								<Button 
+									classes="popup-link white inline-block !py-2 sm:py-3 text-sm sm:text-base" 
+									url="#common-modal" 
+									title="Онлайн запись"
+									dataTitle="Онлайн запись на сервис"
+									dataFormName="Онлайн запись на сервис. Баннер"
+								/>
+								
 							</div>
 						</div>
 					</div>
