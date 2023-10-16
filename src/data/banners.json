@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "type": "image",
-        "imageUrl": "/img/banners/1.jpg",
+        "type": "",
         "videoUrl": "",
+        "imageUrl": "/img/banners/1.jpg",
         "title": "Кузов Эксперт",
         "descr": "Первый официальный кузовной по&nbsp;автомобилям из&nbsp;Китая",
         "btn": "Онлайн запись",

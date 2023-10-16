@@ -48,9 +48,17 @@ import Button from '@/components/Button.astro';
 
 		</div>
 	</div>
+{
+	banner.type === 'video' ? (
+	<video muted="" autoplay="" poster={banner.imageUrl} class="absolute inset-0 h-full object-cover">
+		<source src={banner.videoUrl} type="video/mp4">
+	</video>	
+	) : (
 	<img
-		src="/img/banners/1.jpg"
+		src={banner.imageUrl}
 		class="absolute inset-0 h-full w-full object-cover object-center"
 		alt={banner.title}
 	/>
+	)
+}
 </div>
