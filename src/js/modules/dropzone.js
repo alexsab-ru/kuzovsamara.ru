@@ -4,6 +4,8 @@ import 'dropzone/dist/dropzone.css';
 
 const fileUploads = document.querySelectorAll('.file-upload');
 
+window.filesToUpload = [];
+
 const dropzones = [];
 // let dropzoneError = $('.error-message');
 // let dropzoneSuccess = $('.success-message');
@@ -12,8 +14,10 @@ if (fileUploads.length) {
 	fileUploads.forEach(function (fileUpload, idx) {
 		dropzones[idx] = new Dropzone(fileUpload, {
 			url: 'https://alexsab.ru/lead/kuzovsamara/',
+			// url: '#',
+			autoProcessQueue: false,
 			addRemoveLinks: true,
-			parallelUploads: 1,
+			// parallelUploads: 1,
 			acceptedFiles: '.jpg,.jpeg,.png',
 			maxFiles: 10,
 			maxFilesize: 10,
@@ -43,6 +47,25 @@ if (fileUploads.length) {
 				}
 				return this._updateMaxFilesReachedClass();
 			},
+			addedfile: function(file) {
+				window.filesToUpload.push(file);
+				let reader = new FileReader();
+
+				reader.onload = ((theFile) => {
+					return (e) => {
+						// Получаем Data URL из файла
+						let dataUrl = e.target.result;
+
+						// Вызываем метод для установки миниатюры
+						this.emit("thumbnail", file, dataUrl);
+					};
+				})(file);
+				// Читаем файл как Data URL
+				reader.readAsDataURL(file);
+			}
+			// success: function(file, response){
+			// 	// console.log("success", file);
+			// }
 		});
 	})
 }

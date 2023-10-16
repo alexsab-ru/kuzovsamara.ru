@@ -133,6 +133,9 @@ $$("form").forEach((form) => {
 			return;
 		}
 		let formData = new FormData(form);
+		for (let i = 0; i < window.filesToUpload.length; i++) {
+			formData.append("file" + i, window.filesToUpload[i]);
+		}
 		if(getCookie('fta')) {
 			formData.append("fta", true);
 		}
