@@ -98,6 +98,7 @@ const showMessageModal = (messageModal, icon, message) => {
 // Отправка всех форм
 $$("form").forEach((form) => {
 	const btn = form.querySelector('input[type="submit"]');
+	const dropzone = form.querySelector('.dropzone');
 	form.onsubmit = async (event) => {
 		event.preventDefault();
 		stateBtn(btn, "Отправляем...", true);
@@ -188,6 +189,10 @@ $$("form").forEach((form) => {
 						showMessageModal(messageModal, errorIcon, errorText + "<br>" + data.error);
 					} else {
 						window.WebsiteAnalytics.dataLayer("form-success", formDataObj);
+						window.filesToUpload = [];
+						if(dropzone && window.dropzones.length){
+							window.dropzones.forEach(d => d.removeAllFiles())
+						}
 						showMessageModal(messageModal, successIcon, successText);
 					}
 					form.reset();
