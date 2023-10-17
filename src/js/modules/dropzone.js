@@ -70,12 +70,14 @@ if (fileUploads.length) {
 	});
 }
 
-// Dropzone.confirm = function (question, accepted, rejected) {
-// 	showConfirm(question);
-// 	$(document).on('click', '#accept-confirm', function () {
-// 		hideConfirm();
-// 		accepted();
-// 	});
-// };
-
-// console.log(dropzones);
+Dropzone.confirm = function (question, accepted, rejected) {
+	const confirmModal = document.getElementById('confirm-modal');
+	const acceptBtn = document.getElementById('accept-confirm');
+	confirmModal.querySelector('.message').innerText = question
+	confirmModal.classList.remove('hidden');
+	acceptBtn.addEventListener('click', e => {
+		e.preventDefault();
+		confirmModal.classList.add('hidden');
+		accepted();
+	})
+};
