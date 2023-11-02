@@ -31,7 +31,7 @@ const path = Astro.url.pathname;
                 <ul class="space-y-2">
                 {
                     links.map(link => (
-                    <li><a href={link.url} class={`transition hover:underline ${path === link.url ? 'font-extrabold' : ''}`}>{link.name}</a></li>
+                    <li><a href={path === '/' ? link.url : '/'+link.url} class={`transition hover:underline ${path === link.url ? 'font-extrabold' : ''}`}>{link.name}</a></li>
                     ))
                 }
                 </ul>

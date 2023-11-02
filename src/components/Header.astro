@@ -12,6 +12,8 @@ const links = [
 	{url: '#services', name: 'Услуги сервиса'},
 	{url: '#contacts', name: 'Контакты'},
 ];
+
+const classBottom = path != '/' ? ' border-b' : '';
 ---
 <div x-data="header">
 	<header 
@@ -82,16 +84,18 @@ const links = [
 	</div>
 </header>
 
+
+
 <div 
 	id="site_nav" 
-	class="fixed top-[80px] w-full bg-white/80 border-t z-30 transition-all duration-300 hidden lg:block"
+	class={'fixed top-[80px] w-full bg-white/80 border-t z-30 transition-all duration-300 hidden lg:block'+classBottom}
 	:class="{'!bg-white': open, 'shadow-3xl !bg-white': scrolling}"
 >
 	<div class="container">
 		<div class="flex">
 		{
 			links.map(link => (
-			<a href={link.url} class="scroll-link">{link.name}</a>
+			<a href={path === '/' ? link.url : '/'+link.url} class="scroll-link">{link.name}</a>
 			))
 		}
 		</div>
