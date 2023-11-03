@@ -6,4 +6,5 @@ import './modules/scroll';
 import './modules/map';
 import './modules/form';
 import './modules/modals';
+import './modules/quiz';
 // import './modules/btn.up';
