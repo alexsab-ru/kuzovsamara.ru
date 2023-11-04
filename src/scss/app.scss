@@ -2,8 +2,14 @@
     display: none;
 }
 // @tailwind base;
-// @tailwind components;
+@tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .mobile-title-size {
+      font-size: calc((1vw + 1vh) * 2.2 );
+    }
+  }
 
 @import "fonts";
 @import "ui/buttons";

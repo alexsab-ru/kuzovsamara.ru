@@ -1,14 +1,20 @@
 .quiz-slide {
+    .quiz-slide-wrapper{
+        @apply bg-white/90 md:bg-white;
+    }
     .left{
-        @apply min-h-[800px] h-screen w-3/5 flex flex-col justify-center gap-7;
+        @apply min-h-screen md:min-h-[800px] h-auto md:h-screen py-20 md:w-3/5 flex flex-col justify-center gap-7;
     }
     .right{
-        @apply absolute right-0 top-0 h-full z-10 w-0 transition-all duration-[1.8s] bg-cover bg-right;
-        background-image: url('/img/quiz/1.jpg');
+        @apply absolute right-0 top-0 h-full w-0 transition-all duration-[1.8s] bg-cover bg-center md:bg-right max-md:-z-[1];
     }
     &.swiper-slide-active{
         .right{
-            @apply w-1/3 bg-center;
+            @apply w-full md:w-1/3 bg-center;
         }
     }
+}
+
+.quiz-step{
+    @apply mobile-title-size sm:text-5xl text-gray-400;
 }
