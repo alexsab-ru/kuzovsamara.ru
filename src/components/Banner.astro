@@ -1,8 +1,6 @@
 ---
 import BannerItem from '@/components/BannerItem.astro';
-const res = await fetch("https://jetour-alpha.diywebdev.ru/wp-json/wp/v2/banner?_embed")
-const banners = await res.json()
-// import banners from '@/data/banners.json'
+import banners from '@/data/banners.json'
 ---
 
 <div class="banner relative max-lg:pt-20 pb-[56.25%] max-[400px]:pb-[75%]">
@@ -10,21 +8,8 @@ const banners = await res.json()
 		<div class="swiper banner-slider h-full text-white">
 			<div class="swiper-wrapper">
 				{
-					banners.map(b => (
-					// <BannerItem banner={banner}/>
-						<BannerItem banner={ {
-							"id": b.id,
-							"type": "",
-							"videoUrl": "",
-							"imageUrl": b._embedded['wp:featuredmedia']['0'].media_details.sizes.full.source_url,
-							"title": b.title.rendered,
-							"descr": b.content.rendered,
-							"btn": b.meta.textBtn,
-							"btnUrl": b.meta.urlBtn,
-							"dataTitle": b.title.rendered,
-							"dataFormName": b.title.rendered+". Баннер",
-							"autoplay": 6000
-						} }/>
+					banners.map(banner => (
+					<BannerItem banner={banner}/>
 					))
 				}
 			</div>
