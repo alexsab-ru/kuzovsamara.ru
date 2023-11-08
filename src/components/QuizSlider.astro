@@ -31,7 +31,7 @@ const colors = ['черный', 'белый', 'синий', 'красный', '�
                                 <li><span class="text-red-500 text-lg">✓</span>&nbsp;Пишем здесь все, что угодно</li>
                             </ul>
 
-                            <button class="start-quiz btn w-fit">Начать подбор авто</button>
+                            <button type="button" class="start-quiz btn w-fit">Начать подбор авто</button>
     
                         </div>
                     </div>
@@ -48,8 +48,8 @@ const colors = ['черный', 'белый', 'синий', 'красный', '�
                             {
                                 models.map(model => (
                                 <Checkbox 
-                                    name="model" 
-                                    type="radio" 
+                                    name="model[]" 
+                                    type="checkbox" 
                                     label={model} 
                                     value={model} 
                                     color="black" 

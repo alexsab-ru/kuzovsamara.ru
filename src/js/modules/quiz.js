@@ -28,8 +28,10 @@ const quizSlider = new Swiper(".quiz-slider", {
 				if(inputs.length){
 					inputs.forEach(input => {
 						input.addEventListener('change', e => {
-							nextBtn ? nextBtn.disabled = false : null;
-							slider.slideNext();
+							if(nextBtn){
+								inputs.some(checked) ? nextBtn.disabled = false : nextBtn.disabled = true;
+							}
+							// slider.slideNext();
 						});
 					});
 				}
