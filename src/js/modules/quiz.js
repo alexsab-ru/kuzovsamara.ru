@@ -31,7 +31,9 @@ const quizSlider = new Swiper(".quiz-slider", {
 							if(nextBtn){
 								inputs.some(checked) ? nextBtn.disabled = false : nextBtn.disabled = true;
 							}
-							// slider.slideNext();
+							if(input.type === 'radio'){
+								slider.slideNext();
+							}
 						});
 					});
 				}
@@ -50,7 +52,7 @@ const quizSlider = new Swiper(".quiz-slider", {
 			})
 		},
 		slideNextTransitionStart(slider){
-			console.log('NEXT');
+			// console.log('NEXT');
 		}
 	}
 });
