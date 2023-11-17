@@ -28,9 +28,9 @@ const label = '<span>Я согласен на</span><a href="/privacy-policy" cl
 					<div class="dropzone file-upload p-0 sm:p-5 bg-white border-2 border-black border-dashed focus:border-accent-500 h-auto cursor-pointer text-black" tabindex="-1"></div>
 				</div>
 				<div class="min-[600px]:col-span-2">
-					<Checkbox name='agree' label={label} required errorClasses='text-yellow-300 w-full' />
+					<Checkbox name='agree' label={label} required errorClasses='text-yellow-300 w-full' errorText='Чтобы продолжить, установите флажок' />
 					<input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
-					<Button view="form-button" classes="white" title="Отправить" />
+					<Button view="form-button" classes="white mt-5" title="Отправить" />
 				</div>
 			</div>
 		</form>
