@@ -8,16 +8,16 @@ import Button from '@/components/Button.astro';
 
 <div class="swiper-slide banner-slide" data-swiper-autoplay={banner.autoplay}>
 	<div class="absolute inset-0 bg-black/50 z-[1]"></div>
-	<div class="container h-full relative z-[2]">
+	<div class="container h-full relative z-[2] md:pt-20">
 		<div class="h-full flex flex-col justify-center max-w-4xl">
 			{
 				banner.title ? (
-			<h2
+			<div
 				class="text-3xl md:text-4xl lg:text-6xl uppercase font-bold"
 				data-swiper-parallax="-20%"
 			>
 				<Fragment set:html={banner.title} />
-			</h2>
+			</div>
 				) : ('')
 			}
 
