@@ -5,9 +5,10 @@ import OnlineCalculation from "@/components/OnlineCalculation.astro";
 import Advantages from "@/components/Advantages.astro";
 import Services from "@/components/Services.astro";
 import Contacts from "@/components/Contacts.astro";
+const title = "Кузовные работы в Самаре";
 ---
 
-<Layout>
+<Layout title={`${title}`}>
 	<Banner/>
 	<OnlineCalculation/>
 	<Advantages/>
